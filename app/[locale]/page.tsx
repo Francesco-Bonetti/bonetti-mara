@@ -53,21 +53,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {locale === 'it' ? 'Le opere saranno disponibili a breve' : 'Works coming soon'}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8">
           {paintings.map((p) => {
             const title = locale === 'it' ? p.title_it : p.title_en
             const shortDesc = locale === 'it' ? p.short_desc_it : p.short_desc_en
 
             return (
-              <div key={p.id} className="painting-card group">
+              <div key={p.id} className="painting-card group break-inside-avoid mb-8">
                 <Link href={`/${locale}/quadri/${p.id}`}>
-                  <div className="painting-frame aspect-[3/4] relative overflow-hidden bg-ink/5 mb-4">
+                  <div className="painting-frame mb-3">
                     <Image
                       src={p.thumb_url || p.image_url}
                       alt={title}
-                      fill
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      width={0}
+                      height={0}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   </div>
                 </Link>
