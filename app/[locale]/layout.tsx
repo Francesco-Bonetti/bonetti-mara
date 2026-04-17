@@ -31,23 +31,25 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className="bg-paper text-ink font-sans antialiased">
         <Navigation locale={locale} isAdmin={isAdmin} t={t.nav} />
-        <main className="pt-20">{children}</main>
+        <main className="pt-[72px] md:pt-20">{children}</main>
 
         {/* ---------- FOOTER ---------- */}
         <footer className="border-t border-ink/10 bg-paper">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-14">
-            <div className="grid md:grid-cols-12 gap-10 items-start">
+          <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-14">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
               <div className="md:col-span-5">
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 text-ink">
-                    <svg viewBox="0 0 40 40" fill="none" className="w-full h-full" aria-hidden="true">
+                  <span className="w-11 h-11 text-ink">
+                    <svg viewBox="0 0 48 48" fill="none" className="w-full h-full" aria-hidden="true">
                       <g fontFamily="Cormorant Garamond, Playfair Display, Georgia, serif" fontStyle="italic" fill="currentColor">
-                        <text x="20" y="24" textAnchor="middle" fontSize="20" fontWeight="500">mb</text>
+                        <text x="24" y="29" textAnchor="middle" fontSize="28" fontWeight="500">mb</text>
                       </g>
-                      <path d="M 8 30 Q 16 28.5 20 29.5 T 32 30" stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" fill="none"/>
+                      <path d="M 8 36 Q 18 34.2 24 35.4 T 40 36" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" fill="none"/>
+                      <circle cx="16.5" cy="35.3" r="0.9" fill="currentColor"/>
+                      <circle cx="31.5" cy="35.3" r="0.9" fill="currentColor"/>
                     </svg>
                   </span>
-                  <span className="font-serif text-lg tracking-wide">Mara Bonetti</span>
+                  <span className="font-serif text-lg md:text-xl tracking-wide">Mara Bonetti</span>
                 </div>
                 <p className="text-sm text-ink/60 mt-4 max-w-sm leading-relaxed">
                   {locale === 'it'

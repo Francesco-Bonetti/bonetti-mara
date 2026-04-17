@@ -63,17 +63,17 @@ export default async function PaintingPage({
   const longDesc = locale === 'it' ? painting.long_desc_it : painting.long_desc_en
 
   return (
-    <article className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
+    <article className="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-16">
       {/* Back */}
       <Link
         href={`/${locale}`}
-        className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-stone hover:text-ink transition-colors mb-10"
+        className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-stone hover:text-ink transition-colors mb-8 md:mb-10"
       >
         <span aria-hidden>←</span>
         {locale === 'it' ? 'Opere' : 'Works'}
       </Link>
 
-      <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+      <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">
         {/* Immagine */}
         <div className="md:col-span-7 md:sticky md:top-28">
           <div className="painting-frame">
@@ -90,19 +90,19 @@ export default async function PaintingPage({
 
         {/* Info */}
         <div className="md:col-span-5 md:pt-4">
-          <p className="eyebrow mb-5">{locale === 'it' ? 'Opera' : 'Work'}</p>
-          <h1 className="font-serif text-5xl md:text-6xl leading-[1.05] italic text-balance mb-6">
+          <p className="eyebrow mb-4 md:mb-5">{locale === 'it' ? 'Opera' : 'Work'}</p>
+          <h1 className="font-serif text-[2.5rem] md:text-6xl leading-[1.05] italic text-balance mb-5 md:mb-6">
             {title}
           </h1>
 
           {shortDesc && (
-            <p className="text-[13px] tracking-[0.22em] uppercase text-stone mb-10">{shortDesc}</p>
+            <p className="text-[12px] md:text-[13px] tracking-[0.22em] uppercase text-stone mb-8 md:mb-10">{shortDesc}</p>
           )}
 
-          <div className="rule mb-8" />
+          <div className="rule mb-6 md:mb-8" />
 
           {longDesc && (
-            <div className="font-serif text-[17px] leading-[1.85] text-ink/85 whitespace-pre-line text-pretty mb-10">
+            <div className="font-serif text-[16px] md:text-[17px] leading-[1.8] md:leading-[1.85] text-ink/85 whitespace-pre-line text-pretty mb-8 md:mb-10">
               {longDesc}
             </div>
           )}
@@ -114,7 +114,7 @@ export default async function PaintingPage({
             </span>
           </div>
 
-          <div className="mt-14 pt-8 border-t border-ink/10">
+          <div className="mt-10 md:mt-14 pt-6 md:pt-8 border-t border-ink/10">
             <p className="eyebrow mb-3">{locale === 'it' ? 'Informazioni' : 'Information'}</p>
             <p className="text-sm text-ink/65 leading-relaxed">
               {locale === 'it'
@@ -127,7 +127,7 @@ export default async function PaintingPage({
 
       {/* Prev / Next */}
       {(prev || next) && (
-        <nav className="mt-24 pt-10 border-t border-ink/10 grid md:grid-cols-2 gap-6">
+        <nav className="mt-16 md:mt-24 pt-8 md:pt-10 border-t border-ink/10 grid md:grid-cols-2 gap-6">
           {prev ? (
             <Link
               href={`/${locale}/quadri/${prev.id}`}

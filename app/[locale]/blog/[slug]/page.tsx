@@ -76,25 +76,25 @@ export default async function ArticlePage({
   const html = renderContent(contentJson)
 
   return (
-    <article className="pb-24">
+    <article className="pb-16 md:pb-24">
       {/* Header */}
-      <header className="max-w-3xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-10 text-center">
+      <header className="max-w-3xl mx-auto px-5 md:px-10 pt-10 md:pt-24 pb-8 md:pb-10 text-center">
         <Link
           href={`/${locale}/blog`}
-          className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-stone hover:text-ink transition-colors mb-10"
+          className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-stone hover:text-ink transition-colors mb-8 md:mb-10"
         >
           <span aria-hidden>←</span>
           {locale === 'it' ? 'Quaderno' : 'Journal'}
         </Link>
 
-        <p className="eyebrow mb-6">{formatDate(article.created_at, locale)}</p>
+        <p className="eyebrow mb-5 md:mb-6">{formatDate(article.created_at, locale)}</p>
 
-        <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] font-light text-balance mb-8">
+        <h1 className="font-serif text-[2.5rem] md:text-7xl leading-[1.05] font-light text-balance mb-6 md:mb-8">
           {title}
         </h1>
 
         {excerpt && (
-          <p className="font-serif italic text-xl md:text-2xl text-ink/70 leading-snug max-w-2xl mx-auto text-pretty">
+          <p className="font-serif italic text-lg md:text-2xl text-ink/70 leading-snug max-w-2xl mx-auto text-pretty">
             {excerpt}
           </p>
         )}
@@ -102,7 +102,7 @@ export default async function ArticlePage({
 
       {/* Cover */}
       {article.cover_image_url && (
-        <div className="max-w-5xl mx-auto px-6 md:px-10 mb-16">
+        <div className="max-w-5xl mx-auto px-5 md:px-10 mb-10 md:mb-16">
           <div className="painting-frame">
             <Image
               src={article.cover_image_url}
@@ -117,16 +117,16 @@ export default async function ArticlePage({
       )}
 
       {/* Contenuto */}
-      <div className="max-w-2xl mx-auto px-6 md:px-10">
+      <div className="max-w-2xl mx-auto px-5 md:px-10">
         <div
           className="tiptap-content text-ink/90"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="rule mt-20 mb-12" />
+        <div className="rule mt-14 md:mt-20 mb-10 md:mb-12" />
 
         {/* Firma */}
-        <p className="text-center font-serif italic text-xl text-stone mb-20">— Mara</p>
+        <p className="text-center font-serif italic text-xl text-stone mb-14 md:mb-20">— Mara</p>
 
         {/* Commenti */}
         <CommentSection articleSlug={slug} comments={comments} locale={locale} />

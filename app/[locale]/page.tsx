@@ -79,18 +79,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       {/* ---------- HERO ---------- */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-20 md:pb-28">
-          <div className="grid md:grid-cols-12 gap-10 items-end">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 pt-14 md:pt-28 pb-16 md:pb-28">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-end">
             <div className="md:col-span-7 animate-fadeUp">
-              <p className="eyebrow mb-8">{t.eyebrow}</p>
-              <h1 className="font-serif font-light text-[clamp(3rem,9vw,8rem)] leading-[0.95] tracking-tight text-balance">
+              <p className="eyebrow mb-6 md:mb-8">{t.eyebrow}</p>
+              <h1 className="font-serif font-light text-[clamp(2.75rem,11vw,8rem)] leading-[0.95] tracking-tight text-balance">
                 {t.heroLine1}<br />
                 <span className="italic text-stone">{t.heroLine2}</span>
               </h1>
             </div>
             <div className="md:col-span-4 md:col-start-9 animate-fadeUp" style={{ animationDelay: '0.15s' }}>
-              <div className="rule mb-6" />
-              <p className="font-serif italic text-xl md:text-2xl leading-snug text-ink/80 text-pretty">
+              <div className="rule mb-5 md:mb-6" />
+              <p className="font-serif italic text-lg md:text-2xl leading-snug text-ink/80 text-pretty">
                 {t.heroSub}
               </p>
             </div>
@@ -102,11 +102,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* ---------- GALLERIA ---------- */}
-      <section id="opere" className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <div className="grid md:grid-cols-12 gap-10 mb-16 md:mb-20">
+      <section id="opere" className="max-w-7xl mx-auto px-5 md:px-10 py-16 md:py-28">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-10 mb-12 md:mb-20">
           <div className="md:col-span-5">
-            <p className="eyebrow mb-5">{t.worksEyebrow}</p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-balance">{t.worksTitle}</h2>
+            <p className="eyebrow mb-4 md:mb-5">{t.worksEyebrow}</p>
+            <h2 className="font-serif text-[2rem] md:text-5xl leading-tight text-balance">{t.worksTitle}</h2>
           </div>
           <div className="md:col-span-5 md:col-start-8 self-end">
             <p className="text-[15px] leading-relaxed text-ink/70 text-pretty">{t.worksIntro}</p>
@@ -118,13 +118,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="eyebrow">{t.emptyState}</p>
           </div>
         ) : (
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 md:gap-10">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 md:gap-10">
             {paintings.map((p) => {
               const title = locale === 'it' ? p.title_it : p.title_en
               const shortDesc = locale === 'it' ? p.short_desc_it : p.short_desc_en
 
               return (
-                <div key={p.id} className="painting-card group break-inside-avoid mb-10 md:mb-14">
+                <div key={p.id} className="painting-card group break-inside-avoid mb-8 sm:mb-10 md:mb-14">
                   <Link href={`/${locale}/quadri/${p.id}`} className="block">
                     <div className="painting-frame">
                       <Image
@@ -157,20 +157,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* ---------- SULL'ARTISTA ---------- */}
       <section id="artista" className="border-t border-ink/10 bg-wash/40">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 py-16 md:py-28">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-5">
-              <p className="eyebrow mb-5">{t.aboutEyebrow}</p>
-              <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] italic">{t.aboutTitle}</h2>
+              <p className="eyebrow mb-4 md:mb-5">{t.aboutEyebrow}</p>
+              <h2 className="font-serif text-[2.5rem] md:text-6xl leading-[1.05] italic">{t.aboutTitle}</h2>
             </div>
-            <div className="md:col-span-6 md:col-start-7 space-y-6">
-              <p className="font-serif text-[19px] md:text-xl leading-[1.8] text-ink/85 text-pretty">
+            <div className="md:col-span-6 md:col-start-7 space-y-5 md:space-y-6">
+              <p className="font-serif text-[17px] md:text-xl leading-[1.75] md:leading-[1.8] text-ink/85 text-pretty">
                 {t.aboutBody}
               </p>
               <p className="text-[15px] leading-relaxed text-ink/60 text-pretty">
                 {t.aboutBody2}
               </p>
-              <div className="pt-4">
+              <div className="pt-2 md:pt-4">
                 <Link href={`/${locale}/blog`} className="btn-ghost">
                   {t.readBlog}
                 </Link>

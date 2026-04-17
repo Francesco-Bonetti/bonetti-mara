@@ -30,17 +30,17 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const articles = await getArticles()
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
+    <div className="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-24">
       {/* Header */}
-      <header className="grid md:grid-cols-12 gap-10 mb-20 md:mb-28 pb-14 border-b border-ink/10">
+      <header className="grid md:grid-cols-12 gap-8 md:gap-10 mb-14 md:mb-28 pb-10 md:pb-14 border-b border-ink/10">
         <div className="md:col-span-7">
-          <p className="eyebrow mb-6">{locale === 'it' ? 'Quaderno' : 'Journal'}</p>
-          <h1 className="font-serif text-6xl md:text-8xl font-light leading-[0.95] tracking-tight">
+          <p className="eyebrow mb-5 md:mb-6">{locale === 'it' ? 'Quaderno' : 'Journal'}</p>
+          <h1 className="font-serif text-[2.75rem] md:text-8xl font-light leading-[0.95] tracking-tight text-balance">
             {locale === 'it' ? (<>Appunti <span className="italic text-stone">dallo studio</span></>) : (<>Notes <span className="italic text-stone">from the studio</span></>)}
           </h1>
         </div>
         <div className="md:col-span-4 md:col-start-9 self-end">
-          <p className="font-serif italic text-xl leading-snug text-ink/70 text-pretty">
+          <p className="font-serif italic text-lg md:text-xl leading-snug text-ink/70 text-pretty">
             {locale === 'it'
               ? 'Pensieri sparsi sul dipingere, sui luoghi, sulle piccole cose che diventano opera.'
               : 'Scattered thoughts on painting, on places, on small things that become work.'}
@@ -54,7 +54,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           <p className="eyebrow">{locale === 'it' ? 'Articoli in arrivo' : 'Articles coming soon'}</p>
         </div>
       ) : (
-        <div className="space-y-20 md:space-y-24">
+        <div className="space-y-14 md:space-y-24">
           {articles.map((a, i) => {
             const title = locale === 'it' ? a.title_it : a.title_en
             const excerpt = locale === 'it' ? a.excerpt_it : a.excerpt_en
@@ -63,7 +63,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             return (
               <article
                 key={a.id}
-                className={`grid md:grid-cols-12 gap-10 items-start ${isFirst ? '' : 'pt-20 md:pt-24 border-t border-ink/10'}`}
+                className={`grid md:grid-cols-12 gap-6 md:gap-10 items-start ${isFirst ? '' : 'pt-14 md:pt-24 border-t border-ink/10'}`}
               >
                 {a.cover_image_url && (
                   <Link href={`/${locale}/blog/${a.slug}`} className="md:col-span-6 group block">
@@ -81,14 +81,14 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                   </Link>
                 )}
                 <div className={a.cover_image_url ? 'md:col-span-5 md:col-start-8' : 'md:col-span-10 md:col-start-2'}>
-                  <p className="eyebrow mb-5">{formatDate(a.created_at, locale)}</p>
-                  <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-5 text-balance">
+                  <p className="eyebrow mb-4 md:mb-5">{formatDate(a.created_at, locale)}</p>
+                  <h2 className="font-serif text-[1.75rem] md:text-4xl leading-tight mb-4 md:mb-5 text-balance">
                     <Link href={`/${locale}/blog/${a.slug}`} className="hover:italic transition-all">
                       {title}
                     </Link>
                   </h2>
                   {excerpt && (
-                    <p className="text-[16px] leading-relaxed text-ink/70 mb-6 text-pretty">{excerpt}</p>
+                    <p className="text-[15px] md:text-[16px] leading-relaxed text-ink/70 mb-5 md:mb-6 text-pretty">{excerpt}</p>
                   )}
                   <Link
                     href={`/${locale}/blog/${a.slug}`}
