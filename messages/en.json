@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "paintings": "Works",
+    "blog": "Blog",
+    "admin": "Admin"
+  },
+  "home": {
+    "subtitle": "Painter",
+    "viewAll": "View all works"
+  },
+  "painting": {
+    "likes": "Likes",
+    "back": "← Works",
+    "noDesc": ""
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read →",
+    "comments": "Comments",
+    "leaveComment": "Leave a comment",
+    "name": "Your name",
+    "comment": "Your comment",
+    "send": "Send",
+    "noComments": "No comments yet. Be the first!"
+  },
+  "admin": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "logout": "Logout",
+    "paintings": "Paintings",
+    "articles": "Articles",
+    "newPainting": "New painting",
+    "newArticle": "New article",
+    "save": "Save",
+    "publish": "Publish",
+    "unpublish": "Hide",
+    "delete": "Delete",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "titleIt": "Italian title",
+    "titleEn": "English title",
+    "shortDescIt": "Italian short line (max 80 chars)",
+    "shortDescEn": "English short line",
+    "longDescIt": "Italian long description",
+    "longDescEn": "English long description",
+    "image": "Image",
+    "uploadImage": "Upload image",
+    "published": "Published",
+    "draft": "Draft",
+    "slug": "URL Slug",
+    "excerptIt": "Italian excerpt",
+    "excerptEn": "English excerpt",
+    "contentIt": "Italian content",
+    "contentEn": "English content",
+    "coverImage": "Cover image"
+  }
+}

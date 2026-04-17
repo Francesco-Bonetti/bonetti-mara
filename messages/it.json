@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "paintings": "Opere",
+    "blog": "Blog",
+    "admin": "Admin"
+  },
+  "home": {
+    "subtitle": "Pittrice",
+    "viewAll": "Vedi tutte le opere"
+  },
+  "painting": {
+    "likes": "Mi piace",
+    "back": "← Opere",
+    "noDesc": ""
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Leggi →",
+    "comments": "Commenti",
+    "leaveComment": "Lascia un commento",
+    "name": "Il tuo nome",
+    "comment": "Il tuo commento",
+    "send": "Invia",
+    "noComments": "Nessun commento ancora. Sii il primo!"
+  },
+  "admin": {
+    "login": "Accedi",
+    "email": "Email",
+    "password": "Password",
+    "logout": "Esci",
+    "paintings": "Quadri",
+    "articles": "Articoli",
+    "newPainting": "Nuovo quadro",
+    "newArticle": "Nuovo articolo",
+    "save": "Salva",
+    "publish": "Pubblica",
+    "unpublish": "Nascondi",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "cancel": "Annulla",
+    "titleIt": "Titolo italiano",
+    "titleEn": "Titolo inglese",
+    "shortDescIt": "Riga breve italiana (max 80 caratteri)",
+    "shortDescEn": "Riga breve inglese",
+    "longDescIt": "Descrizione lunga italiana",
+    "longDescEn": "Descrizione lunga inglese",
+    "image": "Immagine",
+    "uploadImage": "Carica immagine",
+    "published": "Pubblicato",
+    "draft": "Bozza",
+    "slug": "Slug URL",
+    "excerptIt": "Anteprima italiana",
+    "excerptEn": "Anteprima inglese",
+    "contentIt": "Testo italiano",
+    "contentEn": "Testo inglese",
+    "coverImage": "Immagine copertina"
+  }
+}
