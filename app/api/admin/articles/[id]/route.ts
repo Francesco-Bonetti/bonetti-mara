@@ -12,7 +12,12 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!await getAdminFromRequest(req)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   const { id } = await params
-  const body = await req.json() as Record<string, unknown>
+  const body = await req.json() as {
+    titleIt?: string; titleEn?: string
+    excerptIt?: string; excerptEn?: string
+    contentIt?: string; contentEn?: string
+    coverImageUrl?: string; published?: boolean
+  }
 
   await run(
     `UPDATE articles SET
