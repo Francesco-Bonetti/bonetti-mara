@@ -19,7 +19,18 @@ export default async function EditPaintingPage({ params }: { params: Promise<{ i
   return (
     <div>
       <h1 className="font-serif text-3xl mb-10">Modifica quadro</h1>
-      <PaintingForm initial={{ ...p, published: !!p.published }} />
+      <PaintingForm initial={{
+        id: p.id,
+        title_it: p.title_it,
+        title_en: p.title_en,
+        short_desc_it: p.short_desc_it,
+        short_desc_en: p.short_desc_en,
+        long_desc_it: p.long_desc_it ?? undefined,
+        long_desc_en: p.long_desc_en ?? undefined,
+        image_url: p.image_url,
+        thumb_url: p.thumb_url,
+        published: !!p.published,
+      }} />
     </div>
   )
 }

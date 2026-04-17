@@ -19,7 +19,18 @@ export default async function EditArticlePage({ params }: { params: Promise<{ id
   return (
     <div>
       <h1 className="font-serif text-3xl mb-10">Modifica articolo</h1>
-      <ArticleForm initial={{ ...a, published: !!a.published }} />
+      <ArticleForm initial={{
+        id: a.id,
+        slug: a.slug,
+        title_it: a.title_it,
+        title_en: a.title_en,
+        excerpt_it: a.excerpt_it ?? undefined,
+        excerpt_en: a.excerpt_en ?? undefined,
+        content_it: a.content_it,
+        content_en: a.content_en,
+        cover_image_url: a.cover_image_url ?? undefined,
+        published: !!a.published,
+      }} />
     </div>
   )
 }
