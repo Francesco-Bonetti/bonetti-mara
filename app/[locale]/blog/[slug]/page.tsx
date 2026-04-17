@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+
+export const dynamic = 'force-dynamic'
 import { query } from '@/lib/db'
 import { formatDate } from '@/lib/utils'
 import CommentSection from '@/components/CommentSection'

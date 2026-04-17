@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { query } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import { formatDate } from '@/lib/utils'
 
 interface Article {

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { query } from '@/lib/db'
 import LikeButton from '@/components/LikeButton'
 
+export const dynamic = 'force-dynamic'
+
 interface Painting {
   id: string
   title_it: string
