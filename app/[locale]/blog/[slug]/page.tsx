@@ -11,6 +11,7 @@ interface Article {
   id: string; slug: string
   title_it: string; title_en: string
   content_it: string; content_en: string
+  excerpt_it: string | null; excerpt_en: string | null
   cover_image_url: string | null
   created_at: string
 }
@@ -70,33 +71,66 @@ export default async function ArticlePage({
 
   const comments = await getComments(article.id)
   const title = locale === 'it' ? article.title_it : article.title_en
+  const excerpt = locale === 'it' ? article.excerpt_it : article.excerpt_en
   const contentJson = locale === 'it' ? article.content_it : article.content_en
   const html = renderContent(contentJson)
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
-      <Link href={`/${locale}/blog`} className="text-xs tracking-widest uppercase text-ink/40 hover:text-ink transition-colors mb-12 inline-block">
-        ← Blog
-      </Link>
+    <article className="pb-24">
+      {/* Header */}
+      <header className="max-w-3xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-10 text-center">
+        <Link
+          href={`/${locale}/blog`}
+          className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-stone hover:text-ink transition-colors mb-10"
+        >
+          <span aria-hidden>←</span>
+          {locale === 'it' ? 'Quaderno' : 'Journal'}
+        </Link>
 
-      <p className="text-xs text-ink/30 tracking-widest uppercase mb-4">{formatDate(article.created_at, locale)}</p>
-      <h1 className="font-serif text-4xl md:text-5xl mb-12 leading-tight">{title}</h1>
+        <p className="eyebrow mb-6">{formatDate(article.created_at, locale)}</p>
 
+        <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] font-light text-balance mb-8">
+          {title}
+        </h1>
+
+        {excerpt && (
+          <p className="font-serif italic text-xl md:text-2xl text-ink/70 leading-snug max-w-2xl mx-auto text-pretty">
+            {excerpt}
+          </p>
+        )}
+      </header>
+
+      {/* Cover */}
       {article.cover_image_url && (
-        <div className="painting-frame mb-12">
-          <Image src={article.cover_image_url} alt={title} width={800} height={500} className="w-full h-auto" />
+        <div className="max-w-5xl mx-auto px-6 md:px-10 mb-16">
+          <div className="painting-frame">
+            <Image
+              src={article.cover_image_url}
+              alt={title}
+              width={1400}
+              height={900}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </div>
       )}
 
-      <div
-        className="tiptap-content text-sm leading-relaxed text-ink/80"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {/* Contenuto */}
+      <div className="max-w-2xl mx-auto px-6 md:px-10">
+        <div
+          className="tiptap-content text-ink/90"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
 
-      {/* Comments */}
-      <div className="mt-24 border-t border-ink/10 pt-16">
+        <div className="rule mt-20 mb-12" />
+
+        {/* Firma */}
+        <p className="text-center font-serif italic text-xl text-stone mb-20">— Mara</p>
+
+        {/* Commenti */}
         <CommentSection articleSlug={slug} comments={comments} locale={locale} />
       </div>
-    </div>
+    </article>
   )
 }
