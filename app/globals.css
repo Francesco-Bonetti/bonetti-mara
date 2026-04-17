@@ -16,7 +16,7 @@
 
 @layer components {
   .painting-card {
-    @apply group cursor-pointer;
+    @apply cursor-pointer;
   }
 
   .painting-frame {

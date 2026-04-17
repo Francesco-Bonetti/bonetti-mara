@@ -57,7 +57,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             const shortDesc = locale === 'it' ? p.short_desc_it : p.short_desc_en
 
             return (
-              <div key={p.id} className="painting-card">
+              <div key={p.id} className="painting-card group">
                 <Link href={`/${locale}/quadri/${p.id}`}>
                   <div className="painting-frame aspect-[3/4] relative overflow-hidden bg-ink/5 mb-4">
                     <Image
